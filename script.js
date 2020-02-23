@@ -95,7 +95,7 @@ function generateQuiz(currentQuestion) {
       <form class="question-form">  
             ${currentQuestion.answers
     .map((answer, index) => {
-      return `<input id="answer${index}" class="quesion-container" type="radio" value="${answer}" required />
+      return `<input id="answer${index}" name="quesion-container" type="radio" value="${answer}" required />
                 <label id="btn-answers" for="answer${index}">${answer}</label>
                 <br>`;
     })
@@ -224,3 +224,4 @@ function loadQuiz() {
   reset();
 }
 $(loadQuiz);
+

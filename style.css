@@ -15,22 +15,57 @@
 h1 {
   font-weight: 300;
   margin: 0px;
-  padding: 10px;
-  font-size: 20px;
+  padding: 30px;
+  font-size: 35px;
   background-color: #444;
   color: #fff;
+  margin-bottom: 20px;
+}
+
+#start-screen-btn-div {
+  background-color: darkgray;
 }
 
 .question-form {
+  margin-top: 15px; 
   font-size: 30px;
+  background-color: yellow;
+  color: blue;
   margin-bottom: 50px;
+  padding: 5px;
+  }
+   form {
+     background-color: rgb(245, 32, 32);
+   }
+
+  #next-btn, #next-question {
+    margin-top: 10px;
+    background-color: orange;
   }
 
+  .question-container {
+    justify-content: center;
+    
+  }
+
+  main {
+    background-color: orange;
+    margin-top: 40px;
+    
+  }
+   #go-back-btn {
+     margin-top: 15px;
+   }
+
+   #goBack {
+     background-color: rgb(20, 228, 20);
+   }
+  
  #begin-btn {
   font-family: 'Work Sans', sans-serif;
 	font-size: 22px;
-	background-color: #279;
-	color: green;
+	background-color: rgb(10, 90, 10);
+	color: white;
 	border: 0px;
 	border-radius: 3px;
 	padding: 20px;
@@ -38,5 +73,5 @@ h1 {
   margin-bottom: 20px;
 } 
 #start-screen {
-  background-color: grey;
+  background-color: rgb(102, 99, 99);
 }
