@@ -58,12 +58,13 @@ const STORE = {
   num: 0,
   score: 0
 };
-
+//event listener for start click
 function startClick() {
   $('main').on('click', '#begin-btn', function () {
     $(location).attr('href', renderQuiz);
   });
 }
+//generates html for start screen
 function generateStartScreen() {
   $('main').html(`
   <header id="start-screen">
@@ -76,7 +77,7 @@ function generateStartScreen() {
   
 `);
 }
-
+//generates html for quiz questions and answers
 function generateQuiz(currentQuestion) {
   return `
       <div class="outer-box-question">
@@ -106,16 +107,18 @@ function generateQuiz(currentQuestion) {
           </div>
   </section> 
   `;
-
+//defines currentQuestion
 }
 function currentQuestion() {
   return STORE.questions[STORE.num];
 }
+//renders quiz for correct question
 function renderQuiz() {
   let html = generateQuiz(currentQuestion());
   $('main').html(html);
 
 }
+//renders feedback for choices
 function renderFeedback() {
   if (STORE.answerFeedback === true) {
     $('main').html(generateIfCorrect());
@@ -124,18 +127,20 @@ function renderFeedback() {
 
   }
 }
+//generates correct feedback html
 function generateIfCorrect() {
   return `
   <div class="outer-box-answers">
   <section class="inner-box-answers">
   <form>
   ${scoreBoard()}   
-  <p id="you-are-correct">That was correct</p>
+  <p>That was correct</p>
   ${generateNextButton()}
   </section>
   </div>
   `;
 }
+//generates wrong feedback html
 function generateIfWrong() {
   return `
     <div class="outer-box-answers">
@@ -149,6 +154,7 @@ function generateIfWrong() {
       </form>
     </section>
     `;
+  //function to call the next button
 } function generateNextButton(){
   return `
       <button id="next-question">Next</button>
