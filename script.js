@@ -161,7 +161,7 @@ function generateIfWrong() {
       `;
 }
 
-
+//generates html for scoreboard
 function scoreBoard() {
  
   return `<div class='outer-score-div'>
@@ -172,7 +172,7 @@ function scoreBoard() {
   
   
 }
-
+//listener for submit button
 function handleSubmit() {
   $('main').on('submit', 'form', function (e) {
     e.preventDefault();
@@ -181,6 +181,7 @@ function handleSubmit() {
     handleChoice(choice);
   });
 }
+//listener for user answer selection
 function handleChoice(choice) {
   if (choice === STORE.questions[STORE.num].correctAnswer) {
     STORE.answerFeedback = true;
@@ -190,6 +191,7 @@ function handleChoice(choice) {
   }
   renderFeedback();
 }
+//listener for next button
 function handleNext(currentQuestion) {
   $('main').on('click', '#next-question', function (e) {
     STORE.num++;
@@ -202,13 +204,14 @@ function handleNext(currentQuestion) {
   });
 }
 
-
+//generates html for end of quiz feedback
 function generateResults() {
   $('main').html(`Your final score is ${STORE.score}
   <div id="go-back-btn">
   <button id="goBack">Restart Quiz</button>
   </div>`);
 }
+//listener for goback button to restart quiz
 function reset(){
   $('main').on('click', '#goBack', function (e) {
     generateStartScreen();
